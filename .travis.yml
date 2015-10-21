@@ -12,6 +12,8 @@ before_install:
 - git config --global user.name "Peter Chung"
 - git config --global user.email touhonoob@gmail.com
 - npm install hexo@beta -g
+- npm install
+- git clone https://github.com/wzpan/hexo-theme-wixo.git themes/wixo
 
 script:
   - hexo generate
