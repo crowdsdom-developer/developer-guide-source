@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+  - "0.12"
+
+before_install:
+- openssl aes-256-cbc -K $encrypted_745cea2c2b24_key -iv $encrypted_745cea2c2b24_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- git config --global user.name "Peter Chung"
+- git config --global user.email touhonoob@gmail.com
+- npm install hexo@beta -g
+
+script:
+  - hexo generate
+  - hexo deploy
+
+branches:
+  only:
+    - master
