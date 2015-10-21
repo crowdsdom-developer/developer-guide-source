@@ -1,10 +1,9 @@
 language: node_js
-
 node_js:
-  - "0.12"
-
+- '0.12'
 before_install:
-- openssl aes-256-cbc -K $encrypted_745cea2c2b24_key -iv $encrypted_745cea2c2b24_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+- openssl aes-256-cbc -K $encrypted_745cea2c2b24_key -iv $encrypted_745cea2c2b24_iv
+  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
@@ -14,11 +13,12 @@ before_install:
 - npm install hexo@beta -g
 - npm install
 - git clone https://github.com/wzpan/hexo-theme-wixo.git themes/wixo
-
 script:
-  - hexo generate
-  - hexo deploy
-
+- hexo generate
+- hexo deploy
 branches:
   only:
-    - master
+  - master
+notifications:
+  slack:
+    secure: hm482ThbMRrSPpo8LpBf63fjLtRCgvEH+1UD9UepUpBsfGqVPXWRK1x7zk1rd6+KRQ8ZKWIhAmAizRw29OGHi3CpDBM7Z+UZ2zIbQIEpO7it5bomQc6OEyfpAysbbgKarCJ/tvV72Qc3YWDgcMpKbpdGUsVNBbhg9ixZLdDFuLfowQuSQ3R3szjvl1PBAsh2Xf0AkmVOpReER2F9y1p88Ab6Ma28cQ3tNT5E0ObJ4/brlpEV+nk6OftSs3YbaRHcPNw3/DmbJHKz5XL/f2Az+nuZVbbbe2rAlRJKFy4UmYhJHSuz32zn09CkTo0ZerlahmpEw1TvhbjijLpPoFTFZ9BoCDoj4GFxhzdhTPrvcUPqgAQMwMRftKrwHKKAFcV0DbFqQYyHDgo+4v2npN6Gp0CvgS/CSbQHY15D+jowNJ0yRjHa4NY6/jNcubfmlCC3Ph2kIuIdpA7s8ubJBRZ/vEqnYnQPxQ/duRBqOnFQPBAW3YBAhCN7iCkoXCA4JiYksZrbG1HKgcYt2187s9t10AJO2YkmeK4MR3bReU2QBABNzp38cVOi7xrPERjxwVWQRLBvm/zqzW/AAKhRFiKg5Qa5928FD+CSp2KH8ZZdHR0cuZiDecKH/7MegnRFsarDwvHj+ufWXUQwBMuIeZIwJR94fTY+Rg7vSLUVO84OUWg=
