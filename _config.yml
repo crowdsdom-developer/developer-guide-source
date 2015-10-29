@@ -69,4 +69,4 @@ theme: wixo
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/crowdsdom-developer/crowdsdom-developer.github.io.git
+  repo: git@github.com:crowdsdom-developer/crowdsdom-developer.github.io.git
