@@ -10,6 +10,10 @@ author: 集智数据
 language:
 timezone:
 
+# plugin 
+google_analytics: UA-65157776-4
+duoshuo_shortname: developer-crowdsdom
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
