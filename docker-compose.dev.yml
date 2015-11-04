@@ -1,0 +1,8 @@
+blog:
+  build: .
+  volumes:
+    - .:/app-dev
+  working_dir: /app-dev
+  ports:
+    - "3000:4000"
+  command: "bash -c 'while true; do sleep 10; echo hello; done'"
