@@ -20,6 +20,9 @@
 	  <!-- content -->
 	  <%- item.content %>	  
 
+    <hr/>
+    <%- partial('post/duoshuo_comments', { page: item }) %>
+
 	  <div>
   		<center>
 		  <%- partial('post/pagination', {page: item}) %>
